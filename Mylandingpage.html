@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Landing Page</title>
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333; 
+        background: url(https://www.berjayahotel.com/sites/default/files/hotel-home/colombo/1920-1080-1_0.jpg);
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+
+      .nav-links li {
+        margin-left: 2rem;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #f4b400;
+      }
+
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #fff;
+      }
+
+      .hero {
+        background: url("hero.jpg") no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+      }
+
+      .hero-content {
+        max-width: 600px;
+      }
+
+      .hero-content h2{
+        font-size: 15px;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    margin: 8px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: rgb(237, 198, 147);
+        color: black;
+        transition: o.5s;
+      }
+
+      .hero-content h2:hover{
+        opacity: 0.6;
+      }
+
+      .hero-content h1{
+        font-size: 50px;
+    margin-bottom: 50px;
+    padding: 10px 30px;
+    margin: 8px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: rgb(93, 174, 190);
+        color: black;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        background-color: rgb(183, 148, 214);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: black;
+      }
+
+      .cta {
+        background: #22ce81;
+        color: black;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s ease;
+      }
+
+      .cta:hover {
+        background: #a6c6d2;
+      }
+
+      .about,
+      .services,
+      .contact {
+        padding: 4rem 1rem;
+        text-align: center;
+      }
+
+      .services h2{
+        font-size: 30px;
+    background-color: rgb(151, 93, 209);
+        color: black;
+        
+      }
+
+.about h2,p{
+    
+    color: black;
+}
+
+.about{
+  font-size: 15px;
+    margin-bottom: 10px;
+    padding: 20;
+    margin: 200px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: antiquewhite;
+        color: black;
+}
+
+      .service-box {
+        font-size: 15px;
+    margin-bottom: 10px;
+    padding: 40px;
+    margin: 150px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: rgb(150, 180, 201);
+        color: black;
+      }
+
+      .service-box h3 {
+        margin-bottom: 1rem;
+      }
+
+      .contact form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact input,
+      .contact textarea {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .contact button {
+        padding: 1rem;
+        border: none;
+        background:   #0791c3;
+        color: BLACK;
+        cursor: pointer;
+        font-size: medium;
+        transition: 0.3s ease;
+      }
+
+      .contact button:hover {
+        background-color: #b1b3b8;
+      }
+
+.contact h2{
+  font-size: 30px;
+    
+    background-color: rgb(151, 93, 209);
+        color: black;
+}
+
+      footer {
+        background: #99dfb1;
+        color: black;
+        padding: 1rem;
+        text-align: center;
+      }
+
+  
+    
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background: #333;
+          position: absolute;
+          top: 60px;
+          left: 0;
+        }
+
+        .nav-links.show {
+          display: flex;
+        }
+
+        .nav-links li {
+          margin: 1rem 0;
+          text-align: center;
+          
+        }
+
+        
+
+        .nav-toggle {
+          display: block;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+        .service-box {
+          margin: 1rem 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.5rem;
+        }
+
+        .hero p {
+          font-size: 0.9rem;
+        }
+
+        .cta {
+          padding: 0.8rem 1.5rem;
+        }
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+
+
+    <header>
+      <nav>
+        <div class="logo"> Hotel Royal Palace</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="toggleMenu()">&#9776;</button>
+      </nav>
+    </header>
+<div class="pqr">
+    <img src="data:image/jpeg;base64,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" alt="error">
+  </div>
+
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>HOTEL ROYAL PALACE</h1>
+        <h2>WELCOME TO OUR WEBSITE</h2>
+        <p>Your luxer starts here</p>
+        <a href="#contact" class="cta">Get Started</a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>Our Hotel and services are well known and loved by millions of consumers around the world. We have the right hotel brand for both our guests and owners, whatever their needs.</p>
+      <p>In our hotels and communities all over the world, talented and passionate colleagues deliver True Hospitality for Good, every day.</p>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-box">
+        <h3>Service 1</h3>
+        <p>We provide Providing accommodations and lodging services to guests. Encompasses a broader range of services and experiences, including accommodations, dining, entertainment, events, and customer service.</p>
+      </div>
+      <div class="service-box">
+        <h3>Service 2</h3>
+        <p>Free Wi-Fi, gym, spa, private swimming pool in front of each room, safe car parking, fully equipped business centre, shuttle and cab service, multiple-cuisine dining options, cordial & professional staff, emergency services, guest-support counter and many more fall into the list of amenities that a 5-star hotel provide ...</p>
+      </div>
+      <div class="service-box">
+        <h3>Service 3</h3>
+        <p>Our services also includes staying in a hotel room;
+          meals;
+          clothing and footwear repairing, dry cleaner;
+          recreational and rehabilitative services;
+          sale of souvenirs and printed products;
+          currency exchange;
+          renting of premises.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 MyBrand. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
